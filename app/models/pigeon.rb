@@ -1,0 +1,2 @@
+class Pigeon < ApplicationRecord
+end
