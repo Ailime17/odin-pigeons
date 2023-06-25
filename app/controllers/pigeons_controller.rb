@@ -14,8 +14,10 @@ class PigeonsController < ApplicationController
   def create
     @pigeon = Pigeon.new(pigeon_params)
     if @pigeon.save
+      flash[:success] = "Successfully created a new pigeon"
       redirect_to @pigeon
     else
+      flash.now[:error] = "LOL! There are errors in your birb form you potato!"
       render :new, status: :unprocessable_entity
     end
   end
@@ -27,8 +29,10 @@ class PigeonsController < ApplicationController
   def update
     @pigeon = Pigeon.find(params[:id])
     if @pigeon.update(pigeon_params)
+      flash[:success] = "Successfully updated the pigeon"
       redirect_to @pigeon
     else
+      flash.now[:error] = "LOL! There are errors in your birb form you potato!"
       render :edit, status: :unprocessable_entity
     end
   end
@@ -37,6 +41,7 @@ class PigeonsController < ApplicationController
     @pigeon = Pigeon.find(params[:id])
     @pigeon.destroy
 
+    flash[:success] = "Successfully deleted the pigeon"
     redirect_to root_path, status: :see_other
   end
 
