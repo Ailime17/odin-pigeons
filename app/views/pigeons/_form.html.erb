@@ -16,6 +16,10 @@
     <%= p.text_field :softness %>
   </div>
   <div>
-    <%= p.submit "Add new birb" %>
+    <% if Pigeon.exists?(pigeon.id) %>
+      <%= p.submit "Update birb information" %>
+    <% else %>
+      <%= p.submit "Add new birb" %>
+    <% end %>
   </div>
 <% end %>
