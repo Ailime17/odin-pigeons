@@ -39,4 +39,8 @@ class PigeonsController < ApplicationController
 
     redirect_to root_path, status: :see_other
   end
+
+  def pigeon_params
+    params.require(:pigeon).permit(:name, :age, :cuteness, :softness)
+  end
 end
