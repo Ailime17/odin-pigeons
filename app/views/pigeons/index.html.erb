@@ -1,7 +1,13 @@
 <h1>All pigeons:</h1>
 <ul>
   <% @pigeons.each do |p|%>
-    <li><%= link_to p.name, p %></Li>
+    <li>
+    <%= link_to p.name, p %>
+    <%= link_to "Delete", pigeon_path(p), data: {
+      turbo_method: :delete,
+      turbo_confirm: 'Are u sure?'
+      } %>
+    </li>
   <% end %>
 </ul>
 

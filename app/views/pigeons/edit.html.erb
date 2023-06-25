@@ -1,3 +1,8 @@
 <h1>Edit pigeon:</h1>
 
 <%= render 'form', pigeon: @pigeon %>
+
+<%= link_to "Delete pigeon", pigeon_path(@pigeon), data: {
+  turbo_method: :delete,
+  turbo_confirm: 'Are u sure?'
+  } %>

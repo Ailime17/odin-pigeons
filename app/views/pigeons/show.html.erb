@@ -5,3 +5,7 @@
 <p>Softness: <%= @pigeon.softness %></p>
 
 <%= link_to "Edit pigeon information", edit_pigeon_path(@pigeon) %>
+<%= link_to "Delete pigeon", pigeon_path(@pigeon), data: {
+  turbo_method: :delete,
+  turbo_confirm: 'Are u sure?'
+  } %>
