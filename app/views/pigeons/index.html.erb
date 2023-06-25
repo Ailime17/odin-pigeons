@@ -1,2 +1,9 @@
-<h1>Pigeons#index</h1>
-<p>Find me in app/views/pigeons/index.html.erb</p>
+<h1>All pigeons:</h1>
+<ul>
+  <% @pigeons.each do |p|%>
+    <li><%= link_to p.name, p %></Li>
+  <% end %>
+</ul>
+
+
+<%= link_to "Add new pigeon", new_pigeon_path %>

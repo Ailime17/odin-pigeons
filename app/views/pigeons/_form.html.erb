@@ -1,0 +1,21 @@
+<%= form_with model: pigeon do |p| %>
+  <div>
+    <%= p.label :name %>
+    <%= p.text_field :name %>
+  </div>
+  <div>
+    <%= p.label :age %>
+    <%= p.number_field :age, in: 0.0..20.0, step: 0.1 %>
+  </div>
+  <div>
+    <%= p.label :cuteness %>
+    <%= p.text_field :cuteness %>
+  </div>
+  <div>
+    <%= p.label :softness %>
+    <%= p.text_field :softness %>
+  </div>
+  <div>
+    <%= p.submit "Add new birb" %>
+  </div>
+<% end %>

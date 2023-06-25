@@ -1,2 +1,7 @@
-<h1>Pigeons#show</h1>
-<p>Find me in app/views/pigeons/show.html.erb</p>
+<h1>Pigeon <%= @pigeon.name %></h1>
+
+<p>Age: <%= @pigeon.age %></p>
+<p>Cuteness: <%= @pigeon.cuteness %></p>
+<p>Softness: <%= @pigeon.softness %></p>
+
+<%= link_to "Edit pigeon information", edit_pigeon_path(@pigeon) %>
